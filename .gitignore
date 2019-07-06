@@ -1,5 +1,5 @@
-node_modules
-dist
-coverage
-logs
-.vscode
+/node_modules
+/dist
+/coverage
+/logs
+./vscode
