@@ -1,0 +1,588 @@
+{
+	"info": {
+		"_postman_id": "d5356943-bf88-4215-bfc8-51fa6439d939",
+		"name": "Test Suite PEPO_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Postman PEPO_API POST /user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2380a574-60fa-48b9-b803-eaecbe21a2bb",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { ",
+							"    var jsonData = pm.response.json();",
+							"    pm.globals.set(\"uuid\",jsonData.data.uuid );",
+							"    pm.response.to.have.status(200); });",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"pepo@pepo.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8888/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Postman Echo POST /user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"pepo@pepo.com\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8888/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "56"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"38-UH5gyP/m2WP0Xr3NltxZh99UXdA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 29 Jun 2019 19:06:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"uuid\": \"0b3cb1d0-9aa1-11e9-913a-698764069948\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Postman PEPO_API POST /userWrong",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2380a574-60fa-48b9-b803-eaecbe21a2bb",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { ",
+							"    var jsonData = pm.response.json();",
+							"    pm.globals.set(\"uuid\",jsonData.data.uuid );",
+							"    pm.response.to.have.status(200); });",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"pepo@pepo.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8888/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Postman Echo POST /user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"pepo@pepo.com\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8888/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "56"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"38-UH5gyP/m2WP0Xr3NltxZh99UXdA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 29 Jun 2019 19:06:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"uuid\": \"0b3cb1d0-9aa1-11e9-913a-698764069948\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Postman PEPO_API GET /user/:id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d4b7f90b-ae5f-437c-bcab-774e2f9db077",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8888/user/1234567890",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"user",
+						"1234567890"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"method\": \"POST\"\n}"
+						},
+						"url": {
+							"raw": "https://postman-echo.com/post",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 04 Oct 2018 13:16:50 GMT"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"21a-6y1+9dLw9Ui/9TFPCS1aNOaKU38\""
+						},
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Length",
+							"value": "376"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"args\": {},\n    \"data\": {\n        \"method\": \"POST\"\n    },\n    \"files\": {},\n    \"form\": {},\n    \"headers\": {\n        \"host\": \"postman-echo.com\",\n        \"content-length\": \"21\",\n        \"accept\": \"*/*\",\n        \"accept-encoding\": \"gzip, deflate\",\n        \"cache-control\": \"no-cache\",\n        \"content-type\": \"application/json\",\n        \"cookie\": \"sails.sid=s%3AG10mxUHVB65q6zAdIPRPk7kAxyMNpmeM.tn9m63fNTjoJBYkiUShtDIIliVwslI4ys8tvItjT2%2BA\",\n        \"postman-token\": \"e96e5264-9de6-4aa6-8737-3ab5489d561c\",\n        \"user-agent\": \"PostmanRuntime/7.3.0\",\n        \"x-forwarded-port\": \"443\",\n        \"x-forwarded-proto\": \"https\"\n    },\n    \"json\": {\n        \"method\": \"POST\"\n    },\n    \"url\": \"https://postman-echo.com/post\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Postman PEPO_API GET /allUsers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8d5b8cc5-88b3-4b3c-8d64-33b33f21b711",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });",
+							"pm.test(\"Should email be pepo@pepo.com\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data[0].email).to.eql(\"pepo@pepo.com\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/allUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"allUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Postman PEPO_API GET /allUsers with params",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8d5b8cc5-88b3-4b3c-8d64-33b33f21b711",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });",
+							"pm.test(\"Should email be pepo@pepo.com\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data[0].email).to.eql(\"pepo@pepo.com\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/allUsers?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"allUsers"
+					],
+					"query": [
+						{
+							"key": "wrong",
+							"value": "1234567890",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Postman PEPO_API DELETE /user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f5d227a3-b371-4cb8-b76e-cdf96043ddd6",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"uuid\": \"{{uuid}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8888/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Postman PEPO_API GET /",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a73f5f8c-244e-4f32-a037-11d0f4d2634f",
+						"exec": [
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});pm.test('Should response {data: \"Hello from pepo-api ;)\"}', function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data).to.eql(\"Hello from pepo-api ;)\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Postman PEPO_API DELETE /allUsers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c70d0733-cf3d-4fd7-b11f-34924fb0b71b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test('Should response {data:\"users collection resets\"}\"=', function () {",
+							"    pm.expect(pm.response.text()).to.include(\"users collection resets\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/allUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"allUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Postman PEPO_API GET /allUsers - empty collection",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8d5b8cc5-88b3-4b3c-8d64-33b33f21b711",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });",
+							"pm.test(\"Should response {data:[]}\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data.length).to.eql(0);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/allUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"allUsers"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "06d2bb9a-e55f-431e-b124-98ce9a7c4fd8",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "99d9d036-7a45-484d-9164-35ba6cdd3c7c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
