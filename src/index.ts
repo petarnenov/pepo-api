@@ -18,7 +18,7 @@ if (cluster.isMaster) {
 	// Workers can share any TCP connection
 	// In this case it is an HTTP server
 	//TODO: check cluster module ti use properly!!!
-	new Server(cluster.worker.process.pid).run();
+	new Server(process.pid).run();
 
 	console.log(`Worker ${process.pid} started`);
 }

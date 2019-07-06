@@ -11,6 +11,7 @@ import { format, transports } from 'winston';
 import expressWinston = require('express-winston');
 import { counter } from './counter';
 import { users } from './data';
+import cluster = require('cluster');
 
 const app: express.Application = express();
 const router = express.Router();
@@ -40,6 +41,7 @@ app.use(
 );
 
 export class Server {
+	static cluster = cluster;
 	private pid: number;
 	constructor(pid: number) {
 		this.pid = pid;

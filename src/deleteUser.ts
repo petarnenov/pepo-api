@@ -5,7 +5,7 @@ export const deleteUser = (id: string): boolean => {
 		if (u.uuid === id) acc = i;
 		return acc;
 	}, -1);
-	console.log('index: ', index);
+	//console.log('index: ', index);
 	if (index !== -1) users.splice(index, 1);
 	return index !== -1;
 };
