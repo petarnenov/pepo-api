@@ -23,6 +23,3 @@ export class User {
 		this.createdAt = new Date(+createdAt * 1000);
 	}
 }
-//
-//
-//
