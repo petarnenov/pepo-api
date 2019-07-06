@@ -39,113 +39,120 @@ app.use(
 	})
 );
 
-export const run = () => {
-	router.all('*', (req, res, next) => {
-		counter.increase();
-		console.log(`request : ${counter.getCounter()}`);
-		console.table(users);
-		next();
-	});
+export class Server {
+	private pid: number;
+	constructor(pid: number) {
+		this.pid = pid;
+	}
+	run() {
+		router.all('*', (req, res, next) => {
+			counter.increase();
+			console.log(`server: ${this.pid}`);
+			//console.log(`request : ${counter.getCounter()}`);
+			//console.table(users);
+			next();
+		});
 
-	//TODO: handle GET method
-	router.get('/', (req, res) => {
-		res.status(200);
-		res.send({ data: 'Hello from pepo-api ;)' });
-	});
-
-	router.get('/main', (req, res) => {
-		res.status(200);
-		res.sendFile(path.join(__dirname + '/view/index1.html'));
-	});
-
-	//TODO: handle POST method
-
-	router.post('/user', (req, res) => {
-		const user: User = new User(
-			v1(),
-			req.body.name,
-			req.body.email,
-			req.body.phoneNumbers,
-			req.body.createdAt
-		);
-		if (addUser(user)) {
+		//TODO: handle GET method
+		router.get('/', (req, res) => {
 			res.status(200);
-			res.send({ data: { uuid: user.uuid } });
-		} else {
-			res.status(500).send();
-		}
-	});
+			res.send({ data: 'Hello from pepo-api ;)' });
+		});
 
-	router.get('/user/:id', (req, res, next) => {
-		const id = req.params.id;
-		if (id) {
-			const user = getUser(id);
-			if (user) {
+		router.get('/main', (req, res) => {
+			res.status(200);
+			res.sendFile(path.join(__dirname + '/view/index1.html'));
+		});
+
+		//TODO: handle POST method
+
+		router.post('/user', (req, res) => {
+			const user: User = new User(
+				v1(),
+				req.body.name,
+				req.body.email,
+				req.body.phoneNumbers,
+				req.body.createdAt
+			);
+			if (addUser(user)) {
 				res.status(200);
-				res.send({ data: user });
+				res.send({ data: { uuid: user.uuid } });
+			} else {
+				res.status(500).send();
+			}
+		});
+
+		router.get('/user/:id', (req, res, next) => {
+			const id = req.params.id;
+			if (id) {
+				const user = getUser(id);
+				if (user) {
+					res.status(200);
+					res.send({ data: user });
+				} else {
+					next();
+				}
 			} else {
 				next();
 			}
-		} else {
-			next();
-		}
-	});
+		});
 
-	router.delete('/user', (req, res, next) => {
-		const id = req.body.uuid;
-		if (id) {
-			const isDeletedUser = deleteUser(id);
-			if (isDeletedUser) {
-				res.status(200);
-				res.send({ data: isDeletedUser });
+		router.delete('/user', (req, res, next) => {
+			const id = req.body.uuid;
+			if (id) {
+				const isDeletedUser = deleteUser(id);
+				if (isDeletedUser) {
+					res.status(200);
+					res.send({ data: isDeletedUser });
+				} else {
+					next();
+				}
 			} else {
 				next();
 			}
-		} else {
-			next();
-		}
-	});
+		});
 
-	router.get('/allUsers', (req, res, next) => {
-		const allUsers = getAllUsers();
-		if (allUsers) {
-			res.status(200);
-			res.send({ data: allUsers });
-		} else {
-			next();
-		}
-	});
+		router.get('/allUsers', (req, res, next) => {
+			const allUsers = getAllUsers();
+			if (allUsers) {
+				res.status(200);
+				res.send({ data: allUsers });
+			} else {
+				next();
+			}
+		});
 
-	router.delete('/allUsers', (req, res, next) => {
-		const isDeletedAllUsers = deleteAllUsers();
-		if (isDeletedAllUsers) {
-			res.status(200);
-			res.send({
-				data: users
-			});
-		} else {
-			next();
-		}
-	});
+		router.delete('/allUsers', (req, res, next) => {
+			const isDeletedAllUsers = deleteAllUsers();
+			if (isDeletedAllUsers) {
+				res.status(200);
+				res.send({
+					data: users
+				});
+			} else {
+				next();
+			}
+		});
 
-	router.purge('/', (req, res) => {
-		throw Error('error purging some mistakes');
-	});
+		router.purge('/', (req, res) => {
+			throw Error('error purging some mistakes');
+		});
 
-	//TODO: handle all others
-	router.get('*', (req, res) => {
-		res.status(404).send();
-	});
+		//TODO: handle all others
+		router.get('*', (req, res) => {
+			res.status(404).send();
+		});
 
-	//Store all HTML files in view folder.
-	app.use(express.static(__dirname + '/view'));
+		//Store all HTML files in view folder.
+		app.use(express.static(__dirname + '/view'));
 
-	app.use(express.json());
+		app.use(express.json());
 
-	app.use('/', router);
-	app.listen(port, () => {
-		console.log(`Server runnig on port: ${port}...`);
-	});
-};
+		app.use('/', router);
+		app.listen(port, () => {
+			console.log(`Server runnig on port: ${port}...`);
+		});
+	}
+}
 
 //Pepo-api
