@@ -1,0 +1,420 @@
+{
+	"id": "6e4d4f8d-beac-49b4-91b3-21b3d0bfbc4a",
+	"name": "Test Suite PEPO_API",
+	"allTests": [],
+	"timestamp": "2019-06-29T19:59:02.071Z",
+	"collection_id": "d5356943-bf88-4215-bfc8-51fa6439d939",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "0",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "d5356943-bf88-4215-bfc8-51fa6439d939",
+		"name": "Test Suite PEPO_API",
+		"description": null,
+		"auth": null,
+		"events": [
+			{
+				"listen": "prerequest",
+				"script": {
+					"id": "06d2bb9a-e55f-431e-b124-98ce9a7c4fd8",
+					"type": "text/javascript",
+					"exec": [
+						""
+					]
+				}
+			},
+			{
+				"listen": "test",
+				"script": {
+					"id": "99d9d036-7a45-484d-9164-35ba6cdd3c7c",
+					"type": "text/javascript",
+					"exec": [
+						""
+					]
+				}
+			}
+		],
+		"variables": [],
+		"order": [
+			"7831a44a-76cf-4f4f-bd85-9f60b7f89432",
+			"63b046a5-a255-42f2-9b01-dac05daebe75",
+			"bae889b3-5c7e-4292-8413-36c712da588b",
+			"72f2f664-3c72-4dfd-8b01-427b2da219d7",
+			"f71e294d-ffab-4f25-a445-1c406aca278e",
+			"6242f307-cf00-4353-b91b-1d3b78905c3e"
+		],
+		"folders_order": [],
+		"owner": "6429772",
+		"favorite": false
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [
+		{
+			"key": "id",
+			"value": "45358ed0-9aa5-11e9-9422-15e8d541bd67",
+			"enabled": true
+		},
+		{
+			"key": "uuid",
+			"value": "43654630-9aa6-11e9-ab62-dbffe02a3156",
+			"enabled": true
+		}
+	],
+	"results": [
+		{
+			"name": "Postman PEPO_API POST /user",
+			"id": "7831a44a-76cf-4f4f-bd85-9f60b7f89432",
+			"url": "http://localhost:8888/user",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"9"
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			],
+			"time": "9",
+			"totalRequestTime": "9",
+			"iterationResults": {}
+		},
+		{
+			"name": "Postman PEPO_API POST /userWrong",
+			"id": "63b046a5-a255-42f2-9b01-dac05daebe75",
+			"url": "http://localhost:8888/user",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"5"
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			],
+			"time": "5",
+			"totalRequestTime": "5",
+			"iterationResults": {}
+		},
+		{
+			"name": "Postman PEPO_API GET /user/:id",
+			"id": "bae889b3-5c7e-4292-8413-36c712da588b",
+			"url": "http://localhost:8888/user/1234567890",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found",
+				"detail": {
+					"name": "Not Found",
+					"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+				}
+			},
+			"tests": {
+				"Status code is 404": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"5"
+			],
+			"allTests": [
+				{
+					"Status code is 404": true
+				}
+			],
+			"time": "5",
+			"totalRequestTime": "5",
+			"iterationResults": {}
+		},
+		{
+			"name": "Postman PEPO_API GET /allUsers",
+			"id": "72f2f664-3c72-4dfd-8b01-427b2da219d7",
+			"url": "http://localhost:8888/allUsers",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Should email be pepo@pepo.com": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Should email be pepo@pepo.com": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"5"
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Should email be pepo@pepo.com": true
+				}
+			],
+			"time": "5",
+			"totalRequestTime": "5",
+			"iterationResults": {}
+		},
+		{
+			"name": "Postman PEPO_API DELETE /user/:id",
+			"id": "f71e294d-ffab-4f25-a445-1c406aca278e",
+			"url": "http://localhost:8888/user",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"6"
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			],
+			"time": "6",
+			"totalRequestTime": "6",
+			"iterationResults": {}
+		},
+		{
+			"name": "Postman PEPO_API GET /",
+			"id": "6242f307-cf00-4353-b91b-1d3b78905c3e",
+			"url": "http://localhost:8888/",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Should response {data: \"Hello from pepo-api ;)\"}": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Should response {data: \"Hello from pepo-api ;)\"}": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"5"
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Should response {data: \"Hello from pepo-api ;)\"}": true
+				}
+			],
+			"time": "5",
+			"totalRequestTime": "5",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 8,
+	"totalFail": 0,
+	"totalTime": 35,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "Postman PEPO_API POST /user",
+			"id": "7831a44a-76cf-4f4f-bd85-9f60b7f89432",
+			"url": "http://localhost:8888/user",
+			"time": "2019-06-29T19:59:02.071Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Postman PEPO_API POST /userWrong",
+			"id": "63b046a5-a255-42f2-9b01-dac05daebe75",
+			"url": "http://localhost:8888/user",
+			"time": "2019-06-29T19:59:02.071Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Postman PEPO_API GET /user/:id",
+			"id": "bae889b3-5c7e-4292-8413-36c712da588b",
+			"url": "http://localhost:8888/user/1234567890",
+			"time": "2019-06-29T19:59:02.071Z",
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found",
+				"detail": {
+					"name": "Not Found",
+					"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Postman PEPO_API GET /allUsers",
+			"id": "72f2f664-3c72-4dfd-8b01-427b2da219d7",
+			"url": "http://localhost:8888/allUsers",
+			"time": "2019-06-29T19:59:02.071Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Should email be pepo@pepo.com": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Postman PEPO_API DELETE /user/:id",
+			"id": "f71e294d-ffab-4f25-a445-1c406aca278e",
+			"url": "http://localhost:8888/user",
+			"time": "2019-06-29T19:59:02.071Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Postman PEPO_API GET /",
+			"id": "6242f307-cf00-4353-b91b-1d3b78905c3e",
+			"url": "http://localhost:8888/",
+			"time": "2019-06-29T19:59:02.071Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Should response {data: \"Hello from pepo-api ;)\"}": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		}
+	],
+	"synced": false
+}
