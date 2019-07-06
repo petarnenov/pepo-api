@@ -8,6 +8,7 @@ export const addUser = (user: User): boolean => {
 		users.push(user);
 		return true;
 	} catch (err) {
+		console.error(err.message || JSON.stringify(err));
 		return false;
 	}
 };
