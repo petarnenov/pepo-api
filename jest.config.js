@@ -18,10 +18,17 @@ module.exports = {
 	// clearMocks: false,
 
 	// Indicates whether the coverage information should be collected while executing the test
+<<<<<<< HEAD
 	// collectCoverage: false,
 
 	// An array of glob patterns indicating a set of files for which coverage information should be collected
 	// collectCoverageFrom: null,
+=======
+	collectCoverage: true,
+
+	// An array of glob patterns indicating a set of files for which coverage information should be collected
+	collectCoverageFrom: null,
+>>>>>>> f1e718daaf472852a704a3394064d88d8ba5d642
 
 	// The directory where Jest should output its coverage files
 	// coverageDirectory: null,
@@ -32,12 +39,16 @@ module.exports = {
 	// ],
 
 	// A list of reporter names that Jest uses when writing coverage reports
+<<<<<<< HEAD
 	// coverageReporters: [
 	//   "json",
 	//   "text",
 	//   "lcov",
 	//   "clover"
 	// ],
+=======
+	coverageReporters: ['json', 'text', 'lcov', 'clover'],
+>>>>>>> f1e718daaf472852a704a3394064d88d8ba5d642
 
 	// An object that configures minimum threshold enforcement for coverage results
 	// coverageThreshold: null,
@@ -122,7 +133,11 @@ module.exports = {
 	// snapshotSerializers: [],
 
 	// The test environment that will be used for testing
+<<<<<<< HEAD
 	testEnvironment: 'node'
+=======
+	testEnvironment: 'node',
+>>>>>>> f1e718daaf472852a704a3394064d88d8ba5d642
 
 	// Options that will be passed to the testEnvironment
 	// testEnvironmentOptions: {},
@@ -131,10 +146,17 @@ module.exports = {
 	// testLocationInResults: false,
 
 	// The glob patterns Jest uses to detect test files
+<<<<<<< HEAD
 	// testMatch: [
 	//   "**/__tests__/**/*.[jt]s?(x)",
 	//   "**/?(*.)+(spec|test).[tj]s?(x)"
 	// ],
+=======
+	testMatch: [
+		'**/__tests__/**/*.[jt]s?(x)',
+		'**/?(*.)+(spec|test).[tj]s?(x)'
+	],
+>>>>>>> f1e718daaf472852a704a3394064d88d8ba5d642
 
 	// An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
 	// testPathIgnorePatterns: [
@@ -168,11 +190,19 @@ module.exports = {
 	// unmockedModulePathPatterns: undefined,
 
 	// Indicates whether each individual test should be reported during the run
+<<<<<<< HEAD
 	// verbose: null,
+=======
+	verbose: true,
+>>>>>>> f1e718daaf472852a704a3394064d88d8ba5d642
 
 	// An array of regexp patterns that are matched against all source file paths before re-running tests in watch mode
 	// watchPathIgnorePatterns: [],
 
 	// Whether to use watchman for file crawling
+<<<<<<< HEAD
 	// watchman: true,
+=======
+	watchman: true
+>>>>>>> f1e718daaf472852a704a3394064d88d8ba5d642
 };

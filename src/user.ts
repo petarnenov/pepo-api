@@ -4,9 +4,14 @@ export interface Name {
 }
 
 export class User {
+<<<<<<< HEAD
 
 	uuid: string;
 	name: Name;git 
+=======
+	uuid: string;
+	name: Name;
+>>>>>>> f1e718daaf472852a704a3394064d88d8ba5d642
 	email: string;
 	phoneNumbers: string[];
 	createdAt: Date;
@@ -24,4 +29,7 @@ export class User {
 		this.createdAt = new Date(+createdAt * 1000);
 	}
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> f1e718daaf472852a704a3394064d88d8ba5d642

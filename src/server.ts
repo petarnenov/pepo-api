@@ -61,7 +61,10 @@ export const run = () => {
 	//TODO: handle POST method
 
 	router.post('/user', (req, res) => {
+<<<<<<< HEAD
 		console.info(req.body.createdAt);
+=======
+>>>>>>> f1e718daaf472852a704a3394064d88d8ba5d642
 		const user: User = new User(
 			v1(),
 			req.body.name,
@@ -148,3 +151,8 @@ export const run = () => {
 		console.log(`Server runnig on port: ${port}...`);
 	});
 };
+<<<<<<< HEAD
+=======
+
+//Pepo-api
+>>>>>>> f1e718daaf472852a704a3394064d88d8ba5d642
