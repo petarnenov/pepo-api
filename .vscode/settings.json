@@ -1,0 +1,7 @@
+{
+    "nodeTdd.buildOnActivation": true,
+    "nodeTdd.buildOnCreate": true,
+    "nodeTdd.buildOnDelete": true,
+    "nodeTdd.reporter": "tap",
+    "nodeTdd.showCoverage": true
+}
