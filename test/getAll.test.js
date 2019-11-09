@@ -21,7 +21,7 @@ describe('PEPO-API testing', () => {
 		expect(isAddUser).to.be.true;
 	});
 
-	it('Add user', () => {
+	it.skip('Add user', () => {
 		const now = new Date();
 		const isAddUser = addUser({
 			uuid: '1234',
